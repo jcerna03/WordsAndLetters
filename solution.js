@@ -1,7 +1,7 @@
 const words = ["kellogg", "go", "hola", "lego", "hug", "kocomo", "hello"];
 const letters = ["a", "h", "l", "e", "l", "o", "g", "k"];
 const filterwords = [];
-let letters_map = letters.map(x => x) 
+let letters_map = []
 let validator = 0;
 let longestCount = 0;
 
@@ -11,8 +11,7 @@ for (let word of words) {
   for (let word_letter of word.split("")) {
     for (let [i, letter] of letters_map.entries()) {
       if (word_letter === letter) {
-        let idx = letters_map.indexOf(letter)
-        letters_map.splice(idx,1)
+        letters_map.splice(i,1)
         validator++;
         break;
       }
